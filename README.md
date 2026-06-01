@@ -84,7 +84,6 @@ curl.exe http://localhost:8080/api/v1/users/1
 **Create a post**
 ```bash
 curl.exe http://localhost:8080/api/v1/posts --header "Content-Type: application/json" --request "POST" --data '{\"userID\": 1, \"imageURL\": \"https://example.com/ankit_personal.jpg\", \"caption\": \"Ankit s Personal Photo\"}'
-func createPost(c *gin.Context) {
 ```
 
 **Get all posts**
