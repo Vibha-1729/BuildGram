@@ -63,15 +63,12 @@ All responses return JSON with a `status` field (`"success"` or `"error"`) and a
 
 **Create a user**
 ```bash
-curl http://localhost:8080/api/v1/users \
-  -H "Content-Type: application/json" \
-  -X POST \
-  -d '{"username": "ankit_123", "email": "ankit@example.com"}'
+curl.exe http://localhost:8080/api/v1/users --header "Content-Type: application/json" --request "POST" --data '{\"username\": \"ankit_123\", \"email\": \"ankit@example.com\"}'
 ```
 
 **Get a user**
 ```bash
-curl http://localhost:8080/api/v1/users/1
+curl.exe http://localhost:8080/api/v1/users/1
 ```
 
 ---
@@ -86,20 +83,18 @@ curl http://localhost:8080/api/v1/users/1
 
 **Create a post**
 ```bash
-curl http://localhost:8080/api/v1/posts \
-  -H "Content-Type: application/json" \
-  -X POST \
-  -d '{"userID": 1, "imageURL": "https://example.com/photo.jpg", "caption": "My first post!"}'
+curl.exe http://localhost:8080/api/v1/posts --header "Content-Type: application/json" --request "POST" --data '{\"userID\": 1, \"imageURL\": \"https://example.com/ankit_personal.jpg\", \"caption\": \"Ankit s Personal Photo\"}'
+func createPost(c *gin.Context) {
 ```
 
 **Get all posts**
 ```bash
-curl http://localhost:8080/api/v1/posts
+curl.exe http://localhost:8080/api/v1/posts  --header "Content-Type: application/json" --request "GET"
 ```
 
 **Get a post with comments**
 ```bash
-curl http://localhost:8080/api/v1/posts/1
+curl.exe http://localhost:8080/api/v1/posts/1
 ```
 
 ---
@@ -113,13 +108,10 @@ curl http://localhost:8080/api/v1/posts/1
 
 **Like a post**
 ```bash
-curl -X POST http://localhost:8080/api/v1/posts/1/like
+curl.exe http://localhost:8080/api/v1/posts/1/like --request "POST"
 ```
 
 **Add a comment**
 ```bash
-curl http://localhost:8080/api/v1/posts/1/comments \
-  -H "Content-Type: application/json" \
-  -X POST \
-  -d '{"userID": 2, "text": "This is stunning!"}'
+curl.exe http://localhost:8080/api/v1/posts/1/comments --header "Content-Type: application/json" --request "POST" --data '{\"userID\": 2, \"text\": \"This is stunning!\"}'
 ```
